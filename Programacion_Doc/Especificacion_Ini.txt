@@ -1,1 +1,40 @@
 Se especifica_formato
+
+import java.util.Scanner;
+public class Main {
+     public static void main(String[] args) {
+     Scanner sc = new Scanner(System.in);
+     int Ed=24,men=10000,sumv=0,summ=0,cm=0,cv=0,S;
+     System.out.println("Ingrese cero para salir");
+     while(Ed!=0){
+         System.out.println("Ingrese su edad");
+         Ed=sc.nextInt();
+         if(Ed>=18){
+             if(Ed<men){
+                 men=Ed;
+             }
+          System.out.println("Ingrese su sexo");
+          System.out.println("0. Femenino");
+          System.out.println("1. masculino");
+          S=sc.nextInt();
+          if(S==1){
+              sumv=sumv+Ed;
+              cv++;
+          }else{
+              summ=summ+Ed;
+              cm++;
+          }
+         }else{
+               if(Ed!=0){
+                 System.out.println("No se permite menores de edad");
+               }
+         }
+     }
+     System.out.println("promedio de edad de mujeres : " +
+        (summ / cm) + "\n promedio de edad de varones  " +
+        (sumv / cv) + "\n   total de personas de la fiesta es   " +
+        (cm + cv) + "\n Numero de mujeres  " + (cm) +
+        "\n   Numero de hombres   " +
+        (cv) + "\n  el mas joven de la fiesta tiene : " +(men));
+     }
+}
